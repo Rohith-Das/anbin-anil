@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Coupon</title>
+  <link rel="stylesheet" href="/path/to/your/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <h1>Create Coupon</h1>
+
+  <form action="/admin/dashboard/coupons/create" method="POST">
+    <div>
+      <label for="code">Coupon Code:</label>
+      <input type="text" id="code" name="code" required>
+    </div>
+
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description">
+    </div>
+
+    <div>
+      <label for="discount">Discount (%):</label>
+      <input type="number" id="discount" name="discount" required min="0" max="100">
+    </div>
+
+    <div>
+      <label for="minAmount">Minimum Amount:</label>
+      <input type="number" id="minAmount" name="minAmount" required>
+    </div>
+
+    <div>
+      <label for="maxDiscount">Maximum Discount:</label>
+      <input type="number" id="maxDiscount" name="maxDiscount">
+    </div>
+
+    <div>
+      <label for="expiryDate">Expiry Date:</label>
+      <input type="date" id="expiryDate" name="expiryDate" required>
+    </div>
+
+    <div>
+      <button type="submit">Create Coupon</button>
+      <button type="button" onclick="window.location.href='/admin/dashboard/coupons'">Cancel</button>
+    </div>
+  </form>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // SweetAlert notifications for success or error
+    // <% if (typeof successMessage !== 'undefined') { %>
+    //   Swal.fire({
+    //     icon: 'success',
+    //     title: 'Success',
+    //     text: '<%= successMessage %>'
+    //   }).then(() => {
+    //     window.location.href = '/admin/dashboard/coupons'; // Redirect to coupon list page
+    //   });
+    // <% } %>
+  
+    // <% if (typeof errorMessage !== 'undefined') { %>
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: 'Error',
+    //     text: '<%= errorMessage %>'
+    //   });
+    // <% } %>
+  </script>
+  
+</body>
+</html>
